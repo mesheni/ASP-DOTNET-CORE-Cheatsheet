@@ -1,4 +1,4 @@
-# Asp.Net Core CheatSheet - [PDF Download Cheatsheet](https://1drv.ms/b/s!Ai0GNI50Q5GAgdQyt--UhfqF9G-M6w)
+# Asp.Net Core Шпаргалка - [Скачать шпаргалку в PDF](https://1drv.ms/b/s!Ai0GNI50Q5GAgdQyt--UhfqF9G-M6w)
 
 <div align="center">
 <img src="http://codereform.com/wp-content/uploads/2018/03/aspnetcore-l.png" width=100%/>
@@ -8,58 +8,58 @@
 <br>
 <br>
 
-# Index<br>
+# Содержание<br>
 
-[Start a new project](#Start-a-new-project)<br>
-[Configuration files](#Configuration-files)<br>
-[Environment Variables](#Environment-Variables)<br>
-[How to access Config data and Environmental Variables](#How-to-access-Config-data-and-Environmental-Variables)<br>
-[Tag Helpers](#Tag-Helpers)<br>
-[Create a Model](#Create-a-Model)<br>
-[Create Razor Pages and EntityFramework](#Create-Razor-Pages-and-EntityFramework)<br>
-[Dependency Injection](#Dependency-Injection)<br>
+[Создание нового проекта](#Start-a-new-project)<br>
+[Конфигурационные файлы](#Configuration-files)<br>
+[Переменные окружения](#Environment-Variables)<br>
+[Как получить доступ к данным конфигурации и переменным среды](#How-to-access-Config-data-and-Environmental-Variables)<br>
+[Тег-хелперы](#Tag-Helpers)<br>
+[Создание модели](#Create-a-Model)<br>
+[Создание Razor Pages и EntityFramework](#Create-Razor-Pages-and-EntityFramework)<br>
+[Внедрение зависимостей](#Dependency-Injection)<br>
 
-## Start a new project
+## Создание нового проекта
 
-| Task      | CLI Command         | 
+| Задача      | CLI команда         | 
 | ------------- |:-------------:| 
-|Create new console application    | dotnet new webapp -o aspnetcoreapp |
-|Run the app    | cd aspnetcoreapp<br> dotnet run |
-|Create local Certificate    | dotnet dev-certs https --trust |
+|Создать новое консольное приложение    | dotnet new webapp -o aspnetcoreapp |
+|Запустить приложение    | cd aspnetcoreapp<br> dotnet run |
+|Создать локальный сертификат    | dotnet dev-certs https --trust |
 
 <br>
 
-[back to top](#Index)<br>
+[вернуться к содержанию](#Index)<br>
 
 <br>
 
-## Configuration files
+## Конфигурационные файлы
 <br>
 
-### Development
-
-<br>
-
-1. Appsettings.json - Development ```Non-Private```
-2. Manage User Secrets - Development ```Private```
-<br>
-
-[back to top](#Index)<br>
+### Разработка
 
 <br>
 
-### Environment Variables
+1. Appsettings.json - Development ```Не приватный```
+2. Manage User Secrets - Development ```Приватный```
+<br>
+
+[вернуться к содержанию](#Index)<br>
 
 <br>
 
-1. project => projectName properties => Debug 
-<br>
-
-[back to top](#Index)<br>
+### Переменные окружения
 
 <br>
 
-## How to access Config data and Environmental Variables
+1. проект => настройки проекта => Debug 
+<br>
+
+[вернуться к содержанию](#Index)<br>
+
+<br>
+
+## Как получить доступ к данным конфигурации и переменным среды
 
 <br>
 1. @inject Microsoft.Extensions.Cionfiguration.IConfiguration  configuration
@@ -67,33 +67,34 @@
 2. Use @configuration["KEY"]
 <br>
 
-[back to top](#Index)<br>
+[вернуться к содержанию](#Index)<br>
 
 <br>
 
-## Tag Helpers
+## Тег-хелперы
 
 <br>
-1. To switch them on add 
+1. Чтобы включить их добавьте 
 ```
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 ```
-to _ViewImports.cshtml.
+в _ViewImports.cshtml.
 <br>
 
-#### [Built in Tag Helpers](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/built-in/?view=aspnetcore-2.1)
-
-<br>
-
-[back to top](#Index)<br>
+#### [Встроенные тег-хелперы](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/built-in/?view=aspnetcore-2.1)
 
 <br>
 
-## Create a Model
+[вернуться к содержанию](#Index)<br>
 
-1. In Solution Explorer, right-click the RazorPagesMovie project > Add > New Folder. Name the folder Models.
+<br>
 
-2. Right click the Models folder. Select Add > Class. Name the class Movie and replace the contents of the Movie class with the following code:
+## Создание модели
+
+1. В обозревателе решений щелкните правой кнопкой мыши проект RazorPagesMovie > Добавить > Новая папка. Назовите папку «Модели».
+
+2. Щелкните правой кнопкой мыши папку «Модели». Выберите Добавить > Класс. Назовите класс Movie и замените содержимое класса Movie следующим кодом:
+
 
 <br>
 
@@ -118,57 +119,57 @@ namespace RazorPagesMovie.Models
 ```
 <br>
 
-[back to top](#Index)<br>
+[вернуться к содержанию](#Index)<br>
 
 <br>
 
-## Create Razor Pages and EntityFramework
+## Создание Razor Pages и EntityFramework
 
-In Solution Explorer, right click on the ```Pages folder > Add > New Folder.```
-Name the folder Movies
+В обозревателе решений щелкните правой кнопкой мыши значок ```Pages folder > Add > New Folder.```
+Назовите папку Movies
 
-1. In Solution Explorer, right click on the ```Pages/Movies folder > Add > New Scaffolded Item.```
+1. В обозревателе решений щелкните правой кнопкой мыши ```Pages/Movies folder > Add > New Scaffolded Item.```
 
-2. In the Add Scaffold dialog, ```select Razor Pages using Entity Framework (CRUD) > Add.```
+2. В диалоговом окне "Добавить каркас", выберите "Razor Pages с использованием Entity Framework (CRUD) > Добавить".
 
-3. Complete the Add Razor Pages using Entity Framework (CRUD) dialog:
+3. Заполните диалоговое окно "Добавить Razor Pages с использованием Entity Framework (CRUD)":
 
-> “In the Model class drop down, select Movie (RazorPagesMovie.Models).
-In the Data context class row, select the + (plus) sign and accept the generated name RazorPagesMovie.Models.RazorPagesMovieContext.
-Select Add.”
+> "В выпадающем списке класса модели выберите Movie (RazorPagesMovie.Models).
+В строке класса данных контекста выберите знак "+" и примите сгенерированное имя RazorPagesMovie.Models.RazorPagesMovieContext.
+Выберите Добавить".
 
-The scaffold process creates and updates the following files:
+Процесс создания каркаса создает и обновляет следующие файлы:
 
 ```
-Files created
-Pages/Movies: Create, Delete, Details, Edit, Index.
+Создаваемые файлы
+Pages/Movies: Создать, Удалить, Детали, Редактировать, Индекс.
 Data/RazorPagesMovieContext.cs
 ```
 <br>
 
-[back to top](#Index)<br>
+[вернуться к содержанию](#Index)<br>
 
 <br>
 
-## Dependency Injection
+## Внедрение зависимостей
 
-1. The scaffolding tool automatically created a ```DB context``` and registered it with the dependency injection container. In the ```Startup.ConfigureServices```
+1. Инструмент создания каркаса автоматически создал контекст базы данных и зарегистрировал его в контейнере зависимостей. В файле ```Startup.ConfigureServices```
 
 ```c#
 services.AddDbContext<RazorPagesMovieContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("RazorPagesMovieContext")));
+options.UseSqlServer(Configuration.GetConnectionString("RazorPagesMovieContext")));
 ```
 
-The main page which coordinates Entity framework is the ```DbContext class``` 
+Главная страница, которая координирует Entity framework, - это класс ```DbContext```
 
-Here it's called RazorPagesMovieContext
+Здесь он называется RazorPagesMovieContext
 
-Entity set created  ```DbSet<Movie>``` which corresponds with a database table.
+Создано множество ```DbSet<Movie>```, которое соответствует таблице базы данных.
 
-The ```connection string``` comes from ``` DbContextOptions``` this is read from a ```config file``` for example ```appsettings.json```
+Строка подключения берется из ```DbContextOptions``` и считывается из файла конфигурации, например, ```appsettings.json```
 
 <br>
 
-[back to top](#Index)<br>
+[вернуться к содержанию](#Index)<br>
 
 <br>
